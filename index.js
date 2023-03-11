@@ -6,6 +6,9 @@ async function func(Username) {
     await axios.post("https://users.roblox.com/v1/usernames/users", {
         usernames: [Username],
     }).then(async function (get_Response) {
+        
+        if (!get_Response.data.data[0]) return response = "Invalid username"
+
         response = {
             Username: get_Response.data.data[0].requestedUsername,
             hasVerifiedBadge: get_Response.data.data[0].hasVerifiedBadge,
@@ -14,11 +17,13 @@ async function func(Username) {
         }
     }).catch(async function (error) {
         console.log(error)
+
+        response = { error: true, message: `${error}` }
     });
 
     return response
 }
 
-exports.getInfoFromUsername = async function (Username ) {
+exports.getInfoFromUsername = async function (Username) {
     return await func(Username)
 }
