@@ -1,4 +1,13 @@
-## USAGE
+## OBJECTS
+
+```
+# Username         : Username in ROBLOX.
+# UserID           : Id in ROBLOX.
+# hasVerifiedBadge : State in ROBLOX.
+# displayName      : Display name in ROBLOX.
+```
+
+## EXAMPLE
 
 ```js
 async function app_Main() {
@@ -11,13 +20,4 @@ async function app_Main() {
     console.log(RobloxUserInfo.Username)
 }
 app_Main()
-```
-
-## OBJECTS
-
-```
-# Username         : Username in ROBLOX.
-# UserID           : Id in ROBLOX.
-# hasVerifiedBadge : State in ROBLOX.
-# displayName      : Display name in ROBLOX.
 ```

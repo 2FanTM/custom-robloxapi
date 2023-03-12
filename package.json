@@ -1,6 +1,6 @@
 {
   "name": "custom-robloxapi",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "A module for roblox API.",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/2FanTM/custom-robloxapi"
-  }
+    "url": "git+https://github.com/2FanTM/custom-robloxapi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/2FanTM/custom-robloxapi/issues"
+  },
+  "homepage": "https://github.com/2FanTM/custom-robloxapi#readme"
 }
