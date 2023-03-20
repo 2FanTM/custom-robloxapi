@@ -26,11 +26,9 @@
 # Group.Name             : Name of ROBLOX group.
 # Group.memberCount      : Member count of ROBLOX group.
 # Group.hasVerifiedBadge : Is ROBLOX group has Verified badge?
-# Role.id                : Display name of ROBLOX user.
-# Role.Name              : Unknown, returns null everytime.
-# Role.Rank              : Is ROBLOX user banned?
-# CreatedAt              : Creation Date of ROBLOX user.
-# Description            : Description of ROBLOX user.
+# Role.id                : Role id in ROBLOX group.
+# Role.Name              : Role name in ROBLOX group.
+# Role.Rank              : Role rank in ROBLOX group.
 ```
 
 ## EXAMPLES
@@ -101,7 +99,12 @@ async function example_UserInfoFromID() {
 example_UserInfoFromID() // 1. Calling function.
 ```
 
-## CHANGES
+## CHANGE NOTES
+
+### v1.2.4
+```
+# Oof its too late, my brain is gone. I fixed something, nvm.
+```
 
 ### v1.2.3
 ```
