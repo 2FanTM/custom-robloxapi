@@ -57,8 +57,10 @@ async function example_UserRankInfo() {
         return console.log("Provided UserID is invalid!")
     } else if (getGroupInfoFromID.error) {
         return console.log("Error catched: " + getGroupInfoFromID.message)
+    } else if (getGroupInfoFromID.error && getGroupInfoFromID.message == "GroupID is not a number!") {
+        return console.log("Provided GroupID is not a ID")
     } else if (!getGroupInfoFromID.Group) {
-        return console.log("Provided GroupID is invalid!")
+        return console.log("User is not a member of provided group!")
     }
 
     console.log(getGroupInfoFromID) // 5. Logging whole info to console.
@@ -88,6 +90,13 @@ example_UserInfoFromID() // 1. Calling function.
 ```
 
 ## CHANGES
+
+### v1.2.2
+```
+# Some changes for better error handling in getUserRankInGroupFromID function.
+# Made a change in getUserRankInGroupFromID function to handle string ids.
+# Made a handler change for getUserRankInGroupFromID function in example module.
+```
 
 ### v1.2.1
 ```

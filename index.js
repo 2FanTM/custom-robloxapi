@@ -1,5 +1,9 @@
 const axios = require("axios")
 
+function isAllDigits(inputString) {
+    return /^\d+$/.test(inputString);
+}
+
 async function function_getUserInfoFromUsername(Username) {
     let response
 
@@ -69,11 +73,15 @@ async function function_getUserRankInGroupFromID(UserID, GroupID) {
     await axios.get("https://groups.roblox.com/v2/users/" + UserID + "/groups/roles", {
     }).then(async function (get_Response) {
 
+        if (!isAllDigits(GroupID)) {
+            return response = { error: true, message: `GroupID is not a number!` }
+        }
+
         let numGroupID = parseInt(GroupID)
 
         const groupObject = await (get_Response.data.data).find(x => x.group.id === numGroupID)
 
-        if (groupObject) {
+        if (!response && groupObject) {
             response = {
                 Group: {
                     id: groupObject.group.id,
@@ -88,9 +96,9 @@ async function function_getUserRankInGroupFromID(UserID, GroupID) {
                 },
                 error: false,
             }
-        } else {
+        }else if (!response) {
             response = {
-                Group: undefined,
+                Group: null,
                 Role: "Guest",
                 error: false,
             }
