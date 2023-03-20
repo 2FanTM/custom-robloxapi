@@ -20,6 +20,18 @@
 # Description            : Description of ROBLOX user.
 ```
 
+### getUserRankInGroupFromID
+``` 
+# Group.id               : ID of ROBLOX group.
+# Group.Name             : Name of ROBLOX group.
+# Group.memberCount      : Member count of ROBLOX group.
+# Group.hasVerifiedBadge : Is ROBLOX group has Verified badge?
+# Role.id                : Display name of ROBLOX user.
+# Role.Name              : Unknown, returns null everytime.
+# Role.Rank              : Is ROBLOX user banned?
+# CreatedAt              : Creation Date of ROBLOX user.
+# Description            : Description of ROBLOX user.
+```
 
 ## EXAMPLES
 
@@ -50,20 +62,20 @@ async function example_UserRankInfo() {
     const RobloxAPI = require("custom-robloxapi") // 2. Loading Module
 
     // 3. Requesting rank info with ROBLOX UserID + ROBLOX GroupID.
-    let getGroupInfoFromID = await RobloxAPI.getUserRankInGroupFromID({ UserID: "1", GroupID: "7" }) 
+    let getUserRankInGroupFromID = await RobloxAPI.getUserRankInGroupFromID({ UserID: "1", GroupID: "7" }) 
 
     // 4. Checking for errors below.
-    if (getGroupInfoFromID.error && getGroupInfoFromID.message == "Invalid UserID") {
+    if (getUserRankInGroupFromID.error && getUserRankInGroupFromID.message == "Invalid UserID") {
         return console.log("Provided UserID is invalid!")
-    } else if (getGroupInfoFromID.error) {
-        return console.log("Error catched: " + getGroupInfoFromID.message)
-    } else if (getGroupInfoFromID.error && getGroupInfoFromID.message == "GroupID is not a number!") {
+    } else if (getUserRankInGroupFromID.error) {
+        return console.log("Error catched: " + getUserRankInGroupFromID.message)
+    } else if (getUserRankInGroupFromID.error && getUserRankInGroupFromID.message == "GroupID is not a number!") {
         return console.log("Provided GroupID is not a ID")
-    } else if (!getGroupInfoFromID.Group) {
+    } else if (!getUserRankInGroupFromID.Group) {
         return console.log("User is not a member of provided group!")
     }
 
-    console.log(getGroupInfoFromID) // 5. Logging whole info to console.
+    console.log(getUserRankInGroupFromID) // 5. Logging whole info to console.
 }
 example_UserRankInfo() // 1. Calling function.
 ```
@@ -90,6 +102,11 @@ example_UserInfoFromID() // 1. Calling function.
 ```
 
 ## CHANGES
+
+### v1.2.3
+```
+# Added getUserRankInGroupFromID function export info to Objects in README.md file.
+```
 
 ### v1.2.2
 ```
