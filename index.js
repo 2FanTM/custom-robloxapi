@@ -63,10 +63,65 @@ async function function_getUserInfoFromID(UserID) {
     return response
 }
 
+async function function_getUserRankInGroupFromID(UserID, GroupID) {
+    let response
+
+    await axios.get("https://groups.roblox.com/v2/users/" + UserID + "/groups/roles", {
+    }).then(async function (get_Response) {
+
+        let numGroupID = parseInt(GroupID)
+
+        const groupObject = await (get_Response.data.data).find(x => x.group.id === numGroupID)
+
+        if (groupObject) {
+            response = {
+                Group: {
+                    id: groupObject.group.id,
+                    Name: groupObject.group.name,
+                    memberCount: groupObject.group.memberCount,
+                    hasVerifiedBadge: groupObject.group.hasVerifiedBadge,
+                },
+                Role: {
+                    id: groupObject.role.id,
+                    Name: groupObject.role.name,
+                    Rank: groupObject.role.rank,
+                },
+                error: false,
+            }
+        } else {
+            response = {
+                Group: undefined,
+                Role: "Guest",
+                error: false,
+            }
+        }
+
+        return response
+
+    }).catch(async function (error) {
+        console.log(error)
+
+        if (error.response && error.response.data.errors[0].message == "The user is invalid or does not exist.") {
+            return response = { error: true, message: `Invalid UserID` }
+        }
+
+        response = { error: true, message: `${error}` }
+    });
+
+    return response
+}
+
 exports.getUserInfoFromUsername = async function (Username) {
     return await function_getUserInfoFromUsername(Username)
 }
 
 exports.getUserInfoFromID = async function (UserID) {
     return await function_getUserInfoFromID(UserID)
+}
+
+exports.getUserRankInGroupFromID = async function ({ UserID, GroupID }) {
+    if (!UserID) return { error: true, message: `UserID is undefined.` }
+    if (!GroupID) return { error: true, message: `GroupID is undefined.` }
+
+    return await function_getUserRankInGroupFromID(UserID, GroupID)
 }
