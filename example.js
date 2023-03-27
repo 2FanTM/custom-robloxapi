@@ -19,7 +19,7 @@ async function example_UserRankInfo() {
     const RobloxAPI = require("custom-robloxapi") // 2. Loading Module
 
     // 3. Requesting rank info with ROBLOX UserID + ROBLOX GroupID.
-    let getUserRankInGroupFromID = await RobloxAPI.getUserRankInGroupFromID({ UserID: "1", GroupID: "7" }) 
+    let getUserRankInGroupFromID = await RobloxAPI.getUserRankInGroupFromID({ UserID: "1", GroupID: "7" })
 
     // 4. Checking for errors below.
     if (getUserRankInGroupFromID.error && getUserRankInGroupFromID.message == "Invalid UserID") {
@@ -53,3 +53,21 @@ async function example_UserInfoFromID() {
 
 }
 example_UserInfoFromID() // 1. Calling function.
+
+async function example_GroupInfoFromID() {
+
+    const RobloxAPI = require("custom-robloxapi") // 2. Loading Module
+
+    // 3. Requesting rank info with ROBLOX UserID + ROBLOX GroupID.
+    let getGroupInfoFromID = await RobloxAPI.getGroupInfoFromID("7")
+
+    // 4. Checking for errors below.
+    if (getGroupInfoFromID.error && getGroupInfoFromID.message == "Invalid GroupID") {
+        return console.log("Provided GroupID is invalid!")
+    } else if (getGroupInfoFromID.error) {
+        return console.log("Error catched: " + getGroupInfoFromID.message)
+    }
+
+    console.log(getGroupInfoFromID) // 5. Logging whole info to console.
+}
+example_GroupInfoFromID() // 1. Calling function.

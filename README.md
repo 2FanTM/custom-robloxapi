@@ -1,40 +1,16 @@
-## OBJECTS
+## Description
+This module supports some of ROBLOX API endpoints. You can access to basic info of user/group.
+We are currently updating this module every week. If you find a bug please create an issue through Github. 
 
-### getUserInfoFromUsername
-``` 
-# Username               : Username of ROBLOX user.
-# UserID                 : UserID of ROBLOX user.
-# hasVerifiedBadge       : Is ROBLOX user has Verified badge?
-# displayName            : Display name of ROBLOX user.
+## Useable Function List
+
+```
+getUserInfoFromUsername, getUserRankInGroupFromID, getGroupInfoFromID, getUserInfoFromID
 ```
 
-### getUserInfoFromID
-``` 
-# UserID                 : UserID of ROBLOX user.
-# Username               : Username of ROBLOX user.
-# hasVerifiedBadge       : Is ROBLOX user has Verified badge?
-# displayName            : Display name of ROBLOX user.
-# externalAppDisplayName : Unknown, returns null everytime.
-# isBanned               : Is ROBLOX user banned?
-# CreatedAt              : Creation Date of ROBLOX user.
-# Description            : Description of ROBLOX user.
-```
-
-### getUserRankInGroupFromID
-``` 
-# Group.id               : ID of ROBLOX group.
-# Group.Name             : Name of ROBLOX group.
-# Group.memberCount      : Member count of ROBLOX group.
-# Group.hasVerifiedBadge : Is ROBLOX group has Verified badge?
-# Role.id                : Role id in ROBLOX group.
-# Role.Name              : Role name in ROBLOX group.
-# Role.Rank              : Role rank in ROBLOX group.
-```
-
-## EXAMPLES
+## Functions
 
 ### getUserInfoFromUsername Function
-
 ```js
 async function example_UserInfoFromUsername() {
     const RobloxAPI = require("custom-robloxapi") // 2. Loading Module
@@ -51,6 +27,13 @@ async function example_UserInfoFromUsername() {
     console.log(getUserInfoFromUsername) // 5. Logging whole info to console.
 }
 example_UserInfoFromUsername() // 1. Calling function first.
+```
+#### getUserInfoFromUsername
+``` 
+# Username               : Username of ROBLOX user.
+# UserID                 : UserID of ROBLOX user.
+# hasVerifiedBadge       : Is ROBLOX user has Verified badge?
+# displayName            : Display name of ROBLOX user.
 ```
 
 ### getUserRankInGroupFromID Function
@@ -77,6 +60,47 @@ async function example_UserRankInfo() {
 }
 example_UserRankInfo() // 1. Calling function.
 ```
+#### getUserRankInGroupFromID
+``` 
+# Group.id               : ID of ROBLOX group.
+# Group.Name             : Name of ROBLOX group.
+# Group.memberCount      : Member count of ROBLOX group.
+# Group.hasVerifiedBadge : Is ROBLOX group has Verified badge?
+# Role.id                : Role id in ROBLOX group.
+# Role.Name              : Role name in ROBLOX group.
+# Role.Rank              : Role rank in ROBLOX group.
+```
+
+### getGroupInfoFromID Function
+```js
+async function example_GroupInfoFromID() {
+
+    const RobloxAPI = require("custom-robloxapi") // 2. Loading Module
+
+    // 3. Requesting rank info with ROBLOX UserID + ROBLOX GroupID.
+    let getGroupInfoFromID = await RobloxAPI.getGroupInfoFromID("7")
+
+    // 4. Checking for errors below.
+    if (getGroupInfoFromID.error && getGroupInfoFromID.message == "Invalid GroupID") {
+        return console.log("Provided GroupID is invalid!")
+    } else if (getGroupInfoFromID.error) {
+        return console.log("Error catched: " + getGroupInfoFromID.message)
+    }
+
+    console.log(getGroupInfoFromID) // 5. Logging whole info to console.
+}
+example_GroupInfoFromID() // 1. Calling function.
+```
+#### getGroupInfoFromID
+``` 
+# GroupID                : ID of ROBLOX group.
+# Description            : Description of ROBLOX group.
+# Owner.UserID           : Owner ID of ROBLOX group.
+# Owner.Type             : Owner type of ROBLOX group?
+# CreatedAt              : Group creation date.
+# hasVerifiedBadge       : Is ROBLOX group has verified badge.
+```
+
 
 ### getUserInfoFromID Function
 ```js
@@ -98,8 +122,28 @@ async function example_UserInfoFromID() {
 }
 example_UserInfoFromID() // 1. Calling function.
 ```
+#### getUserInfoFromID
+``` 
+# UserID                 : UserID of ROBLOX user.
+# Username               : Username of ROBLOX user.
+# hasVerifiedBadge       : Is ROBLOX user has Verified badge?
+# displayName            : Display name of ROBLOX user.
+# externalAppDisplayName : Unknown, returns null everytime.
+# isBanned               : Is ROBLOX user banned?
+# CreatedAt              : Creation Date of ROBLOX user.
+# Description            : Description of ROBLOX user.
+```
+
 
 ## CHANGE NOTES
+
+### v1.2.5
+```
+# New endpoint for getting groups info.
+# Made a changes in README.md file.
+# Provided module description.
+# Some of changes made in index.js for viewing the code pretty.
+```
 
 ### v1.2.4
 ```
@@ -129,11 +173,5 @@ example_UserInfoFromID() // 1. Calling function.
 ```
 # Added new endpoint to get more user info.
 # Now all error handlers now returning "error: true" status. So errors can be handled easily now.
-# Some changes for example module.
-```
-
-### v1.1.9
-```
-# Added error handler for undefined username.
 # Some changes for example module.
 ```
