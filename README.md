@@ -140,6 +140,11 @@ example_UserInfoFromID() // 1. Calling function.
 
 ### v1.2.7
 ```
+# README.md not found bug fixed.
+```
+
+### v1.2.7
+```
 # Added a line at description.
 ```
 
@@ -164,11 +169,4 @@ example_UserInfoFromID() // 1. Calling function.
 ### v1.2.3
 ```
 # Added getUserRankInGroupFromID function export info to Objects in README.md file.
-```
-
-### v1.2.2
-```
-# Some changes for better error handling in getUserRankInGroupFromID function.
-# Made a change in getUserRankInGroupFromID function to handle string ids.
-# Made a handler change for getUserRankInGroupFromID function in example module.
 ```
