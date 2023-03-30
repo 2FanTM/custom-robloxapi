@@ -137,6 +137,11 @@ example_UserInfoFromID() // 1. Calling function.
 
 ## CHANGE NOTES
 
+### v1.2.6
+```
+# Some of changes made in index.js for viewing the code pretty.
+```
+
 ### v1.2.5
 ```
 # New endpoint for getting groups info.
@@ -167,11 +172,4 @@ example_UserInfoFromID() // 1. Calling function.
 # New endpoint for getting user rank in a group.
 # Some changes for example module.
 # LICENSE changes woooo
-```
-
-### v1.2.0
-```
-# Added new endpoint to get more user info.
-# Now all error handlers now returning "error: true" status. So errors can be handled easily now.
-# Some changes for example module.
 ```

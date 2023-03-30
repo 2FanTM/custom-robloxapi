@@ -37,8 +37,7 @@ async function function_getUserInfoFromID(UserID) {
 
     if (!UserID) return { error: true, message: `UserID is undefined.` }
 
-    await axios.get("https://users.roblox.com/v1/users/" + UserID, {
-    }).then(async function (get_Response) {
+    await axios.get("https://users.roblox.com/v1/users/" + UserID, {}).then(async function (get_Response) {
 
         if (!get_Response.data) return response = { error: true, message: `UserID is undefined.` }
 
@@ -73,8 +72,7 @@ async function function_getGroupInfoFromID(GroupID) {
     if (!GroupID)
         return { error: true, message: `GroupID is undefined.` }
 
-    await axios.get("https://groups.roblox.com/v2/groups?groupIds=" + GroupID, {
-    }).then(async function (get_Response) {
+    await axios.get("https://groups.roblox.com/v2/groups?groupIds=" + GroupID, {}).then(async function (get_Response) {
 
         if (!get_Response.data.data[0])
             return response = { error: true, message: `Invalid GroupID` }
@@ -106,8 +104,7 @@ async function function_getGroupInfoFromID(GroupID) {
 async function function_getUserRankInGroupFromID(UserID, GroupID) {
     let response
 
-    await axios.get("https://groups.roblox.com/v2/users/" + UserID + "/groups/roles", {
-    }).then(async function (get_Response) {
+    await axios.get("https://groups.roblox.com/v2/users/" + UserID + "/groups/roles", {}).then(async function (get_Response) {
 
         if (!isAllDigits(GroupID)) {
             return response = { error: true, message: `GroupID is not a number!` }
