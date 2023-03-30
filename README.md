@@ -1,6 +1,7 @@
 ## Description
 This module supports some of ROBLOX API endpoints. You can access to basic info of user/group.
-We are currently updating this module every week. If you find a bug please create an issue through Github. 
+We are currently updating this module every week. If you find a bug please create an issue through Github.
+Actually this module is open source.
 
 ## Useable Function List
 
@@ -137,6 +138,11 @@ example_UserInfoFromID() // 1. Calling function.
 
 ## CHANGE NOTES
 
+### v1.2.7
+```
+# Added a line at description.
+```
+
 ### v1.2.6
 ```
 # Some of changes made in index.js for viewing the code pretty.
@@ -165,11 +171,4 @@ example_UserInfoFromID() // 1. Calling function.
 # Some changes for better error handling in getUserRankInGroupFromID function.
 # Made a change in getUserRankInGroupFromID function to handle string ids.
 # Made a handler change for getUserRankInGroupFromID function in example module.
-```
-
-### v1.2.1
-```
-# New endpoint for getting user rank in a group.
-# Some changes for example module.
-# LICENSE changes woooo
 ```

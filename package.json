@@ -1,6 +1,6 @@
 {
   "name": "custom-robloxapi",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "A module for roblox API.",
   "main": "index.js",
   "scripts": {
