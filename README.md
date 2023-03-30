@@ -138,7 +138,12 @@ example_UserInfoFromID() // 1. Calling function.
 
 ## CHANGE NOTES
 
-### v1.2.7
+### v1.2.9
+```
+# Change note version fix.
+```
+
+### v1.2.8
 ```
 # README.md not found bug fixed.
 ```
@@ -164,9 +169,4 @@ example_UserInfoFromID() // 1. Calling function.
 ### v1.2.4
 ```
 # Oof its too late, my brain is gone. I fixed something, nvm.
-```
-
-### v1.2.3
-```
-# Added getUserRankInGroupFromID function export info to Objects in README.md file.
 ```
