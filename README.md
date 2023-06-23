@@ -138,6 +138,11 @@ example_UserInfoFromID() // 1. Calling function.
 
 ## CHANGE NOTES
 
+### v1.3.2
+```
+# Second Hotfix for filtered getUserRankInGroupFromID function error.
+```
+
 ### v1.3.1
 ```
 # Hotfix for filtered getUserRankInGroupFromID function error.
