@@ -138,6 +138,13 @@ example_UserInfoFromID() // 1. Calling function.
 
 ## CHANGE NOTES
 
+### v1.3.0
+```
+# You can now get whole data in getUserRankInGroupFromID function.
+# Code reneval, no more shitcode. All functions now seperated by modules.
+# Index file changes made.
+```
+
 ### v1.2.9
 ```
 # Change note version fix.
@@ -164,9 +171,4 @@ example_UserInfoFromID() // 1. Calling function.
 # Made a changes in README.md file.
 # Provided module description.
 # Some of changes made in index.js for viewing the code pretty.
-```
-
-### v1.2.4
-```
-# Oof its too late, my brain is gone. I fixed something, nvm.
 ```

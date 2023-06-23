@@ -12,7 +12,7 @@ async function example_UserInfoFromUsername() {
 
     console.log(getUserInfoFromUsername) // 5. Logging whole info to console.
 }
-example_UserInfoFromUsername() // 1. Calling function first.
+example_UserInfoFromUsername() // 1. Calling function.
 
 async function example_UserRankInfo() {
 
