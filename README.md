@@ -138,6 +138,11 @@ example_UserInfoFromID() // 1. Calling function.
 
 ## CHANGE NOTES
 
+### v1.3.1
+```
+# Hotfix for filtered getUserRankInGroupFromID function error.
+```
+
 ### v1.3.0
 ```
 # You can now get whole data in getUserRankInGroupFromID function.
@@ -162,13 +167,5 @@ example_UserInfoFromID() // 1. Calling function.
 
 ### v1.2.6
 ```
-# Some of changes made in index.js for viewing the code pretty.
-```
-
-### v1.2.5
-```
-# New endpoint for getting groups info.
-# Made a changes in README.md file.
-# Provided module description.
 # Some of changes made in index.js for viewing the code pretty.
 ```
