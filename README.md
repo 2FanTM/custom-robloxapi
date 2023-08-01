@@ -138,6 +138,11 @@ example_UserInfoFromID() // 1. Calling function.
 
 ## CHANGE NOTES
 
+### v1.3.3
+```
+# Some fixes for README.md + package.json
+```
+
 ### v1.3.2
 ```
 # Second Hotfix for filtered getUserRankInGroupFromID function error.
@@ -168,9 +173,4 @@ example_UserInfoFromID() // 1. Calling function.
 ### v1.2.7
 ```
 # Added a line at description.
-```
-
-### v1.2.6
-```
-# Some of changes made in index.js for viewing the code pretty.
 ```
